@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - mon site educatif</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz de Mathématiques</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="maths.html">Mathématiques</a></li>
+                <li><a href="sciences.html">sciences</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>testez vos connaissances</h2>
+        <form id=Quiz>
+            <p>1. Quelle est la somme de 2+2 ?</p>
+            <label><input type="radio" name="q1" value="3">3</label><br>
+            <label><input type="radio" name="q1" value="4">4</label><br>
+            <label><input type="radio" name="q1" value="5">5</label><br>
+
+            <p>2. quelle est la racine carré de 16 ?</p>
+            <label><input type="radio" name="q2" value="4">4</label><br>
+            <label><input type="radio" name="q2" value="5">5</label><br>
+            <label><input type="radio" name="q2" value="6">6</label><br>
+
+            <button type="button" onclick="checkAnswers()">verifier mes reponses</button>
+        </form>
+        <p id="result"></p>
+    </main>
+    <footer>
+        <p>&copy; 2024 mon site éducatif</p>
+    </footer>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                q1: '4'
+                q2: '4'
+            };
+            let score = 0;
+            for (const question in answers) {
+                const options = document.getElementsByName(question) ;
+                for (const option of options) [
+                    if (option.checked && option.value === answers[question]) {
+                        score++;
+                    }
+                ]
+            }
+            document.getElementById('result').innerText = votre score est &{score}
+        }
+    </script>
+</body>
+</html>

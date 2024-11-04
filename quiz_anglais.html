@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz d'Anglais - Mon Site Éducatif</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Mon Site Éducatif</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="maths.html">Mathématiques</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sciences.html">Sciences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="anglais.html">Anglais</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>    
+    <main class="container mt-4">
+        <h2>Testez vos connaissances en anglais</h2>
+        <form id="quiz">
+            <p>1. Comment dit-on "Bonjour" en anglais ?</p>
+            <label><input type="radio" name="q1" value="Hello"> Hello</label><br>
+            <label><input type="radio" name="q1" value="Goodbye"> Goodbye</label><br>
+            <label><input type="radio" name="q1" value="Please"> Please</label><br>
+
+            <p>2. Comment dit-on "Merci" en anglais ?</p>
+            <label><input type="radio" name="q2" value="Thank you"> Thank you</label><br>
+            <label><input type="radio" name="q2" value="Sorry"> Sorry</label><br>
+            <label><input type="radio" name="q2" value="Yes"> Yes</label><br>
+
+            <button type="button" onclick="checkAnswers()">Vérifier mes réponses</button>
+        </form>
+        <p id="result"></p>
+    <footer>
+        <p>&copy; 2024 Mon Site Éducatif</p>
+    </footer>
+    <script>
+        function checkAnswers() {
+            const answers = {
+                q1: 'Hello 
+                q2: 'Thank you'
+            };
+            let score = 0;
+            for (const question in answers) {
+                const options = document.getElementsByName(question);
+                for (const option of options) {
+                    if (option.checked && option.value === answers[question]) {
+                        score++;
+                    }
+                }
+            }
+            document.getElementById('result').innerText = `Votre score est ${score} sur ${Object.keys(answers).length}.`;
+        }
+    </script>
+</body>
+</html>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Mon Site Éducatif</p>
+    </footer>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                q1: 'Hello',
+                q2: 'Thank you'
+            };
+            let score = 0;
+            for (const question in answers) {
+                const options = document.getElementsByName(question);
+                for (const option of options) {
+                    if (option.checked && option.value === answers[question]) {
+                        score++;
+                    }
+                }
+            }
+            document.getElementById('result').innerText = `Votre score est ${score} sur ${Object.keys(answers).length}.`;
+        }
+    </script>
+</body>
+</html>
